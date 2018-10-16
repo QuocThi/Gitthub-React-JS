@@ -7,6 +7,10 @@ class App extends Component {
         console.log('Day la app component!');
     }
 
+    onClick2(text)
+    {
+        console.log(text);
+    }
   render() {
         var products = [
         {
@@ -61,9 +65,15 @@ class App extends Component {
                                 {elements}
                             </div>
                             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                         {/*   // Không truyền tham số*/}
                                 <button type="button" className="btn btn-warning" onClick={ this.onClick }>
                                 Click Me!
                                 </button>
+                          {/*   Có truyền tham số*/}
+                          <button type="button" className="btn btn-warning" onClick = {() => {this.onClick2('Chuỗi truyền vào!')}}>
+                                Click Me Again!
+                          </button>
+
                             </div>
                         </div>
                     </div>

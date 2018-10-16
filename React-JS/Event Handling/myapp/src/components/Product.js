@@ -8,10 +8,14 @@ class Product extends Component {
             this.onAddToCart = this.onAddToCart.bind(this);
     }
     onAddToCart(){
-        alert(this.props.children);
+        alert(this.props.children + ' - ' + this.props.price);
         console.log(this.props.children);
-        //console.log(this.props.children);
     }
+    // Cách 3 để bắt sự kiện
+    //     onAddToCart2 = () =>{
+    //     alert(this.props.children + ' - ' + this.props.price);
+    //     console.log(this.props.children);
+    // }
 
   render() {
     return (
