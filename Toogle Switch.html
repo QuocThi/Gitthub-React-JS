@@ -29,14 +29,26 @@
   transition: .4s;
 }
 
-.slider:before {
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: yellow;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:after{
   position: absolute;
   content: "";
   height: 26px;
   width: 26px;
-  left: 4px;
+  right: 4px;
   bottom: 4px;
-  background-color: yellow;
+  background-color: black;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -49,10 +61,16 @@ input:focus + .slider {
   box-shadow: 0 0 100px pink;
 }
 
-input:checked + .slider:before {
+input:checked + .slider:before{
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+}
+
+input:checked + .slider:after{
+  -webkit-transform: translateX(-26px);
+  -ms-transform: translateX(-26px);
+  transform: translateX(-26px);
 }
 
 /* Rounded sliders */
@@ -60,8 +78,13 @@ input:checked + .slider:before {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.slider.round:before,
+.slider.round:after{
   border-radius: 50%;
+}
+
+.slider.round:after{
+  border-radius:10%;
 }
 </style>
 </head>
