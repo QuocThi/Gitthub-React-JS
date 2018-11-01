@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style the buttons */
+.btn,.btn:hover {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: green;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active {
+    background-color: red;
+    color: blue;
+}
+</style>
+</head>
+<body>
+	<h1>Active component</h1>
+	<p>Highlight the active component</p>
+	
+	<div id="myID">
+		  <button class="btn active">1</button>
+		  <button class="btn">2</button>
+		  <button class="btn">4</button>
+		  <button class="btn">5</button>
+		  <button class="btn">6</button>
+	</div>
+	<script>	
+		// The following lines can use both document and header, they are the same in this example//
+		var header = document.getElementById("myID");					// Only one element becase ID is unique
+		var btns = header.getElementsByClassName("btn");				// Can exist many elements which have the same ClassName
+		
+		for(var i = 0; i <btns.length; i++)
+		{
+			btns[i].addEventListener("click", function() {
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace("active", "");
+				this.className = this.className + " active"; 		// The same as: this.className +=" active"; 
+				//BECAREFUL: the "active" is different from " active"
+			});
+		}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
